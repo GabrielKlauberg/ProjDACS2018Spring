@@ -23,6 +23,12 @@ public class PacienteController {
     public ModelAndView index() {
         List<Paciente> listaPaciente = this.pacienteRepository.findAll();
         
+        Paciente p1 = new Paciente();
+        p1.setNome("Zezinho");
+        p1.setSexo("Masculino");
+        
+        listaPaciente.add(p1);
+        
         return new ModelAndView("paciente/index","listapac",listaPaciente);
     }
 }
